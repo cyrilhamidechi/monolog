@@ -24,7 +24,8 @@ use Monolog\LogRecord;
  */
 class StreamHandler extends AbstractProcessingHandler
 {
-    protected const MAX_CHUNK_SIZE = 2147483647;
+    /** 2GB */
+    protected const MAX_CHUNK_SIZE = 2 * 1024 * 1024 * 1024;
     /** 10MB */
     protected const DEFAULT_CHUNK_SIZE = 10 * 1024 * 1024;
     protected int $streamChunkSize;
